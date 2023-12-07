@@ -7,7 +7,7 @@
                         style="font-size: 30px;"></ion-icon></li>
                 <li class="option" @click="change" id="rgb(255, 0, 0, .002)"></li>
                 <li class="option" @click="change" id="rgb(0, 255, 0, .002)"></li>
-                <li class="option-draw" @click="draw"><ion-icon name="pencil-outline"
+                <li class="option-draw" @click="draw" @touchstart="startdrawing"><ion-icon name="pencil-outline"
                         style="margin-left: -1px; margin-top: -1px; font-size: 20px;  padding: 6px;"></ion-icon></li>
                 <li class="option-draw" @click="refresh"><ion-icon name="trash-outline"
                         style="margin-left: -1px; margin-top: -1px; font-size: 20px;  padding: 6px;"></ion-icon></li>
