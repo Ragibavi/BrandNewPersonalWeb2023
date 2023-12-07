@@ -2,16 +2,18 @@
     <div class="container-canvas">
         <div class="color-pick">
             <ul class="options">
-            <li class="option active" @click="change" id="rgb(0, 0, 255, .002)"><ion-icon class="icon-to-remove md hydrated" role="img" name="checkmark-circle-outline" style="font-size: 30px;"></ion-icon></li>
-            <li class="option" @click="change" id="rgb(255, 0, 0, .002)"></li>
-            <li class="option" @click="change" id="rgb(0, 255, 0, .002)"></li>
-            <li class="option-draw" @click="draw"><ion-icon name="pencil-outline"
-                    style="margin-left: -1px; margin-top: -1px; font-size: 20px;  padding: 6px;"></ion-icon></li>
-            <li class="option-draw" @click="refresh"><ion-icon name="trash-outline"
-                    style="margin-left: -1px; margin-top: -1px; font-size: 20px;  padding: 6px;"></ion-icon></li>
-        </ul>
-    </div>
-    <canvas ref="canvas" class="no-scroll"></canvas>
+                <li class="option active" @click="change" id="rgb(0, 0, 255, .002)"><ion-icon
+                        class="icon-to-remove md hydrated" role="img" name="checkmark-circle-outline"
+                        style="font-size: 30px;"></ion-icon></li>
+                <li class="option" @click="change" id="rgb(255, 0, 0, .002)"></li>
+                <li class="option" @click="change" id="rgb(0, 255, 0, .002)"></li>
+                <li class="option-draw" @click="draw"><ion-icon name="pencil-outline"
+                        style="margin-left: -1px; margin-top: -1px; font-size: 20px;  padding: 6px;"></ion-icon></li>
+                <li class="option-draw" @click="refresh"><ion-icon name="trash-outline"
+                        style="margin-left: -1px; margin-top: -1px; font-size: 20px;  padding: 6px;"></ion-icon></li>
+            </ul>
+        </div>
+        <canvas ref="canvas" class="no-scroll"></canvas>
     </div>
 </template>
   
@@ -131,10 +133,17 @@ export default {
             writeText();
         };
 
+        const setupTouchEvents = () => {
+            canvas.value.addEventListener('touchstart', startdrawing);
+            canvas.value.addEventListener('touchmove', drawing);
+            canvas.value.addEventListener('touchend', () => isDrawing = false);
+            canvas.value.addEventListener('touchcancel', () => isDrawing = false);
+        };
+
         onMounted(() => {
 
             ctx = canvas.value.getContext('2d');
-           
+            setupTouchEvents();
             window.addEventListener('resize', resizeCanvas);
             resizeCanvas();
             canvas.value.addEventListener('touchmove', drawing);
@@ -293,8 +302,7 @@ export default {
 </script>
     
 <style>
-
-body{
+body {
     overflow-x: hidden;
 }
 
@@ -346,38 +354,38 @@ body.dark-mode .color-pick {
     background-color: #121212;
 }
 
-.dark-mode .option.active{
+.dark-mode .option.active {
     box-shadow: 0 0px 10px 0 rgba(255, 255, 255);
 }
 
-.option.active{
+.option.active {
     box-shadow: 0 0px 10px 0 rgb(0, 0, 0);
 }
 
-.dark-mode .option-draw{
+.dark-mode .option-draw {
     background-color: rgb(255, 255, 255);
     color: #252525;
 }
 
 
-.option{
+.option {
     color: white;
 }
 
-.option-draw{
+.option-draw {
     color: white;
 }
 
-.dark-mode .option-draw.start-drawing{
+.dark-mode .option-draw.start-drawing {
     box-shadow: 0 0px 10px 0 rgba(255, 255, 255);
 }
 
 .no-scroll {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .canvas-container {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 720px) {
