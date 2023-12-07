@@ -77,7 +77,6 @@ export default {
       marqueeInner.style.transition = `transform ${animationDuration}s linear`;
       marqueeInner.style.transform = 'translateX(100%)';
 
-      console.log(marqueeInner.style.width)
     },
   },
 };

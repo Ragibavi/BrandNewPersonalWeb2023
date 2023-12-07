@@ -35,5 +35,11 @@
     font-family: pokemon-fill;
     margin: 0; 
   }
+
+  @media screen and (max-width: 719px) {
+    .text-playlist{
+      margin-top: 20px;
+    }
+  }
   </style>
   

@@ -44,4 +44,10 @@ export default {
 .padding-portfolio{
   padding-bottom: 150px;
 }
+
+@media screen and (max-width: 719px) {
+    .text-portfolio{
+      margin-top: 20px;
+    }
+  }
 </style>
