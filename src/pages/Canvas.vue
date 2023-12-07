@@ -71,14 +71,13 @@ export default {
         const startdrawing = () => {
             const startToDraw = document.querySelector('.option-draw');
             if (startToDraw.classList.contains('start-drawing')) {
-                isDrawing = true
+                isDrawing = true;
                 ctx.beginPath();
                 ctx.lineWidth = 7.5;
                 ctx.lineJoin = 'round';
                 ctx.lineCap = 'round';
-            }
-            else {
-                isDrawing = false
+            } else {
+                isDrawing = false;
             }
         };
 
@@ -133,14 +132,17 @@ export default {
             writeText();
         };
 
+        const setupTouchEvents = () => {
+            canvas.value.addEventListener('touchstart', startdrawing);
+            canvas.value.addEventListener('touchmove', drawing);
+            canvas.value.addEventListener('touchend', () => (isDrawing = false));
+            canvas.value.addEventListener('touchcancel', () => (isDrawing = false));
+        };
 
         onMounted(() => {
 
             ctx = canvas.value.getContext('2d');
-            canvas.value.addEventListener('touchstart', startdrawing);
-            canvas.value.addEventListener('touchmove', drawing);
-            canvas.value.addEventListener('touchend', () => isDrawing = false);
-            canvas.value.addEventListener('touchcancel', () => isDrawing = false);
+            setupTouchEvents();
             window.addEventListener('resize', resizeCanvas);
             resizeCanvas();
             canvas.value.addEventListener('touchmove', drawing);
