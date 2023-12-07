@@ -19,11 +19,11 @@
                     </div>
                     <br>
                     <div class="links">
-                        <a href="" target="_blank" class="icon-visit"><ion-icon name="arrow-forward-outline"></ion-icon></a>
-                        <a href="" target="_blank" class="visit-link">Click Here To Visit Project</a>
-                        <a href="https://github.com/PPLG-Wikrama/sysweb-scrwikrama" target="_blank"
+                        <a href="/" target="_blank" class="icon-visit"><ion-icon name="arrow-forward-outline"></ion-icon></a>
+                        <a href="/" target="_blank" class="visit-link">Click Here To Visit Project</a>
+                        <a href="https://github.com/Ragibavi/BrandNewPersonalWeb2023.git" target="_blank"
                             class="icon-source"><ion-icon name="logo-github" class="icon-visit"></ion-icon></a>
-                        <a href="https://github.com/PPLG-Wikrama/sysweb-scrwikrama" target="_blank"
+                        <a href="https://github.com/Ragibavi/BrandNewPersonalWeb2023.git" target="_blank"
                             class="source-link">Source Code</a>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                     <h1>PiketKuy</h1>
                 </div>
                 <div class="description">
-                    <p>website monitoring students who picket at Vocational School Wikrama Bogor</p>
+                    <p>Website monitoring students who picket at Vocational School Wikrama Bogor</p>
                     <div class="element">
                         <span class="laravel">Laravel</span>
                         <span class="javascript"> JavaScript</span>
@@ -79,12 +79,6 @@
                     </div>
                     <br>
                     <div class="links">
-                        <a href="" target="_blank" class="icon-visit"><ion-icon name="arrow-forward-outline"></ion-icon></a>
-                        <a href="" target="_blank" class="visit-link">Click Here To Visit Project</a>
-                        <a href="https://github.com/PPLG-Wikrama/sysweb-scrwikrama" target="_blank"
-                            class="icon-source"><ion-icon name="logo-github" class="icon-visit"></ion-icon></a>
-                        <a href="https://github.com/PPLG-Wikrama/sysweb-scrwikrama" target="_blank"
-                            class="source-link">Source Code</a>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <template>
     <div class="container-profile">
         <div class="img_profile">
-            <img src="/img/canvas.png" alt="">
+            <img src="/img/profileRagibavi.jpg" alt="">
         </div>
         <div class="title">
             <h1>About</h1>
@@ -20,10 +20,10 @@
             <div class="marquee">
                 <div class="marquee__inner">
                     <p class="marquee__line">HTML, CSS, Javascript, Node.js, Express.js, Vue.js, React.js, C++, 
-                        Git, Node.JS, MySQL, PostgreSQL
+                        Git, Node.JS, MySQL
                     </p>
                     <p class="marquee__line">HTML, CSS, Javascript, Node.js, Express.js, Vue.js, React.js, C++, 
-                        Git, Node.JS, MySQL, PostgreSQL
+                        Git, Node.JS, MySQL
                     </p>
                 </div>
             </div>
@@ -33,6 +33,7 @@
         </div>
         <div class="desc-social">
             <p>Im always interested in learning new things, so come connect with me: </p>
+            <a href="pdf/RagibaviCVNew2023.pdf" style="font-family: pokemon-fill;">Download CV</a>
             <ul>
                 <li> <a href="mailto:syams280606.gmail.com" target="_blank">Email - syams280606.gmail.com</a></li>
                 <li><a href="https://github.com/ragibavi" target="_blank">Github - https://github.com/ragibavi</a></li>
@@ -42,6 +43,8 @@
                         https://www.instagram.com/ragibavi</a></li>
                 <li><a href="https://open.spotify.com/user/316epynfsv4qew2rcgebfdy36jka" target="_blank">Spotify -
                         https://open.spotify.com/Armaggudean</a></li>
+                <li><a href="https://wa.me/6282299666066" target="_blank">Whatsapp -
+                    https://wa.me/6282299666066</a></li>
             </ul>
         </div>
     </div>
@@ -146,6 +149,11 @@ body.light-mode .marquee {
 
     .desc{
         font-size: 15px;
+    }
+
+    .img_profile img{
+        width: 200px;
+        height: 200px;
     }
 
     .desc-social{
