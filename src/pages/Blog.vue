@@ -1,8 +1,9 @@
 <template>
     <div class="container-blog">
       <h1 class="text-blog">Blog</h1>
-      <p class="text-blog-description">Here are some collections of Blog I have worked on</p>
+      <p class="text-blog-description">Here are some collections of blog I have worked on</p>
     </div>
+    <h2 class="coming-soon">Coming Soon</h2>
 </template>
 
 
@@ -27,4 +28,12 @@
   font-size: 20px;
   margin-top: -10px;
 }
+
+.coming-soon {
+    text-align: center;
+    line-height: 100vh;
+    font-size: 3rem;
+    font-family: pokemon-fill;
+    margin: 0; 
+  }
 </style>

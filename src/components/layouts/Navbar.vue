@@ -30,7 +30,7 @@
             <div class="nav-text">Blog</div>
         </router-link>
 
-        <router-link to="/">
+        <router-link to="/playlist">
             <ion-icon name="radio-outline" class="icon" @click="change">
             </ion-icon>
             <div class="nav-text">Playlist</div>
