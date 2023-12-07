@@ -133,17 +133,14 @@ export default {
             writeText();
         };
 
-        const setupTouchEvents = () => {
-            canvas.value.addEventListener('touchstart', startdrawing);
-            canvas.value.addEventListener('touchmove', drawing);
-            canvas.value.addEventListener('touchend', () => isDrawing = false);
-            canvas.value.addEventListener('touchcancel', () => isDrawing = false);
-        };
 
         onMounted(() => {
 
             ctx = canvas.value.getContext('2d');
-            setupTouchEvents();
+            canvas.value.addEventListener('touchstart', startdrawing);
+            canvas.value.addEventListener('touchmove', drawing);
+            canvas.value.addEventListener('touchend', () => isDrawing = false);
+            canvas.value.addEventListener('touchcancel', () => isDrawing = false);
             window.addEventListener('resize', resizeCanvas);
             resizeCanvas();
             canvas.value.addEventListener('touchmove', drawing);
