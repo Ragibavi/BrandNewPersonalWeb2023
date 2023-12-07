@@ -254,6 +254,7 @@ body.dark-mode .icon.active {
         transform: translateX(-50%);
         box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
         overflow: visible;
+        z-index: 1;
     }
 
     .nav-icon {

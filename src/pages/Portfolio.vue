@@ -4,6 +4,7 @@
       <p class="text-portfolio-description">Here are some collections of projects I have worked on</p>
       <div class="">
         <PortfolioCard></PortfolioCard>
+        <div class="padding-portfolio"></div>
       </div>
     </div>
 </template>
@@ -38,5 +39,9 @@ export default {
 .text-portfolio-description {
   font-size: 20px;
   margin-top: -10px;
+}
+
+.padding-portfolio{
+  padding-bottom: 150px;
 }
 </style>

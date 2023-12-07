@@ -1,5 +1,35 @@
 <template>
     <div class="card-container">
+        
+        <div class="card">
+            <div class="img_2">
+                <img src="/img/personalweb.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">
+                    <h1>My Personal Web</h1>
+                </div>
+                <div class="description">
+                    <p>Muhammad Syams Ragibavi Personal Web</p>
+                    <div class="element">
+                        <span class="vue">Vue</span>
+                        <span class="javascript"> JavaScript</span>
+                        <span class="html">HTML</span>
+                        <span class="css">CSS</span>
+                    </div>
+                    <br>
+                    <div class="links">
+                        <a href="" target="_blank" class="icon-visit"><ion-icon name="arrow-forward-outline"></ion-icon></a>
+                        <a href="" target="_blank" class="visit-link">Click Here To Visit Project</a>
+                        <a href="https://github.com/PPLG-Wikrama/sysweb-scrwikrama" target="_blank"
+                            class="icon-source"><ion-icon name="logo-github" class="icon-visit"></ion-icon></a>
+                        <a href="https://github.com/PPLG-Wikrama/sysweb-scrwikrama" target="_blank"
+                            class="source-link">Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="card">
             <div class="img">
                 <img src="/img/canvas.png" alt="">
@@ -43,35 +73,6 @@
                     <p>website monitoring students who picket at Vocational School Wikrama Bogor</p>
                     <div class="element">
                         <span class="laravel">Laravel</span>
-                        <span class="javascript"> JavaScript</span>
-                        <span class="html">HTML</span>
-                        <span class="css">CSS</span>
-                    </div>
-                    <br>
-                    <div class="links">
-                        <a href="" target="_blank" class="icon-visit"><ion-icon name="arrow-forward-outline"></ion-icon></a>
-                        <a href="" target="_blank" class="visit-link">Click Here To Visit Project</a>
-                        <a href="https://github.com/PPLG-Wikrama/sysweb-scrwikrama" target="_blank"
-                            class="icon-source"><ion-icon name="logo-github" class="icon-visit"></ion-icon></a>
-                        <a href="https://github.com/PPLG-Wikrama/sysweb-scrwikrama" target="_blank"
-                            class="source-link">Source Code</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="img_2">
-                <img src="/img/personalweb.png" alt="">
-            </div>
-            <div class="content">
-                <div class="title">
-                    <h1>My Personal Web</h1>
-                </div>
-                <div class="description">
-                    <p>Muhammad Syams Ragibavi Personal Web</p>
-                    <div class="element">
-                        <span class="vue">Vue</span>
                         <span class="javascript"> JavaScript</span>
                         <span class="html">HTML</span>
                         <span class="css">CSS</span>
