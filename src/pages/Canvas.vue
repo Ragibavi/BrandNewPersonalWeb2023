@@ -7,13 +7,14 @@
                         style="font-size: 30px;"></ion-icon></li>
                 <li class="option" @click="change" id="rgb(255, 0, 0, .002)"></li>
                 <li class="option" @click="change" id="rgb(0, 255, 0, .002)"></li>
-                <li class="option-draw" @click="draw" @touchstart="startdrawing"><ion-icon name="pencil-outline"
+                <li class="option-draw" @click="draw" @touchstart="startDrawing"><ion-icon name="pencil-outline"
                         style="margin-left: -1px; margin-top: -1px; font-size: 20px;  padding: 6px;"></ion-icon></li>
                 <li class="option-draw" @click="refresh"><ion-icon name="trash-outline"
                         style="margin-left: -1px; margin-top: -1px; font-size: 20px;  padding: 6px;"></ion-icon></li>
             </ul>
         </div>
-        <canvas ref="canvas" class="no-scroll"></canvas>
+        <canvas ref="canvas" class="no-scroll" @touchstart="startDrawing" @touchmove="drawing"
+            @touchend="stopDrawing"></canvas>
     </div>
 </template>
   
@@ -68,7 +69,7 @@ export default {
             console.log(color)
         };
 
-        const startdrawing = () => {
+        const startDrawing = () => {
             const startToDraw = document.querySelector('.option-draw');
             if (startToDraw.classList.contains('start-drawing')) {
                 isDrawing = true;
@@ -86,6 +87,10 @@ export default {
             ctx.lineTo(e.offsetX, e.offsetY);
             ctx.strokeStyle = color;
             ctx.stroke();
+        };
+
+        const stopDrawing = () => {
+            isDrawing = false;
         };
 
         const resizeCanvas = () => {
@@ -133,10 +138,10 @@ export default {
         };
 
         const setupTouchEvents = () => {
-            canvas.value.addEventListener('touchstart', startdrawing);
+            canvas.value.addEventListener('touchstart', startDrawing);
             canvas.value.addEventListener('touchmove', drawing);
-            canvas.value.addEventListener('touchend', () => (isDrawing = false));
-            canvas.value.addEventListener('touchcancel', () => (isDrawing = false));
+            canvas.value.addEventListener('touchend', stopDrawing);
+            canvas.value.addEventListener('touchcancel', stopDrawing);
         };
 
         onMounted(() => {
@@ -148,7 +153,7 @@ export default {
             canvas.value.addEventListener('touchmove', drawing);
             canvas.value.addEventListener('touchend', () => isDrawing = false);
             canvas.value.addEventListener('touchcancel', () => isDrawing = false);
-            canvas.value.addEventListener('mousedown', startdrawing);
+            canvas.value.addEventListener('mousedown', startDrawing);
             canvas.value.addEventListener('mousemove', drawing);
             canvas.value.addEventListener('mouseup', () => isDrawing = false);
             canvas.value.addEventListener('mouseout', () => isDrawing = false);
