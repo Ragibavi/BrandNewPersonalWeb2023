@@ -307,7 +307,7 @@ export default {
     
 <style>
 body {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 @font-face {
