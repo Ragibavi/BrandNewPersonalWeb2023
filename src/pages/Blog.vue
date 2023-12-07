@@ -1,7 +1,7 @@
 <template>
     <div class="container-blog">
       <h1 class="text-blog">Blog</h1>
-      <p class="text-blog-description">Here are some collections of blog I have worked on</p>
+      <p class="text-blog-description">Here are some collections of blog I have worked</p>
     </div>
     <h2 class="coming-soon">Coming Soon</h2>
 </template>
