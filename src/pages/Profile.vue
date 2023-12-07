@@ -60,9 +60,8 @@ export default {
   methods: {
     makeMarqueeResponsive() {
       const marqueeInner = this.$refs.marqueeInner;
-      const marqueeContainer = this.$refs.marquee;
 
-      const availableWidth = marqueeContainer.clientWidth;
+      const availableWidth = window.innerWidth;
       const totalLineWidth = marqueeInner.scrollWidth;
 
       const durationRatio = totalLineWidth / availableWidth;
@@ -70,11 +69,15 @@ export default {
 
       marqueeInner.style.transition = 'none';
       marqueeInner.style.transform = `translateX(-${totalLineWidth}px)`;
+      marqueeInner.style.maxWidth = `${availableWidth}px`;
+      marqueeInner.style.width = `${availableWidth / 1.01}px`;
 
       marqueeInner.offsetWidth;
 
       marqueeInner.style.transition = `transform ${animationDuration}s linear`;
       marqueeInner.style.transform = 'translateX(100%)';
+
+      console.log(marqueeInner.style.width)
     },
   },
 };
@@ -144,9 +147,9 @@ body.light-mode .marquee {
 
 .marquee__inner {
   display: flex;
-  white-space: nowrap;
+  white-space: nowrap; /* Ensure the lines stay in a single row */
+  transition: transform 10s linear infinite; /* Adjust the transition property here */
 }
-
 .marquee__line {
   flex-shrink: 0;
   margin: 0;
@@ -185,7 +188,7 @@ body.light-mode .marquee {
     }
 
     .marquee {
-        margin-left: -25px;
+        margin-left: -10px;
         font-size: 25px;
     }
 
