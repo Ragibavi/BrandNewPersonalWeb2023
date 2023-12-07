@@ -292,7 +292,11 @@ export default {
 };
 </script>
     
-<style scoped>
+<style>
+
+body{
+    overflow-x: hidden;
+}
 
 @font-face {
     font-family: 'Sickness';

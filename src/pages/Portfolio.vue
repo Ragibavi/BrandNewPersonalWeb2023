@@ -1,5 +1,4 @@
 <template>
-  <div class="body-container">
     <div class="container-card">
       <h1 class="text-portfolio">Portfolio</h1>
       <p class="text-portfolio-description">Here are some collections of projects I have worked on</p>
@@ -7,7 +6,6 @@
         <PortfolioCard></PortfolioCard>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -29,7 +27,6 @@ export default {
   max-width: 968px;
   width: 100%;
   margin: 25px auto;
-  overflow-y: auto;
 }
 
 .text-portfolio {

@@ -4,6 +4,7 @@ import App from './App.vue'
 import Canvas from '@/pages/Canvas.vue'
 import Profile from '@/pages/Profile.vue'
 import Portfolio from '@/pages/Portfolio.vue'
+import Blog from '@/pages/Blog.vue'
 
  const routes = [
     {
@@ -17,6 +18,10 @@ import Portfolio from '@/pages/Portfolio.vue'
     {
         path: '/portfolio',
         component: Portfolio,
+    }, 
+    {
+        path: '/blog',
+        component: Blog,
     },
 
  ]

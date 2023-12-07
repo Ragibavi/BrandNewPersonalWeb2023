@@ -24,10 +24,10 @@
             <div class="nav-text">Profile</div>
         </router-link>
 
-        <router-link to="/">
-            <ion-icon name="document-outline" class="icon" @click="change">
+        <router-link to="/blog">
+            <ion-icon name="book-outline" class="icon" @click="change">
             </ion-icon>
-            <div class="nav-text">About</div>
+            <div class="nav-text">Blog</div>
         </router-link>
 
         <router-link to="/">
