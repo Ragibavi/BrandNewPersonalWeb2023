@@ -70,7 +70,7 @@ export default {
       marqueeInner.style.transition = 'none';
       marqueeInner.style.transform = `translateX(-${totalLineWidth}px)`;
       marqueeInner.style.maxWidth = `${availableWidth}px`;
-      marqueeInner.style.width = `${availableWidth / 1.01}px`;
+      marqueeInner.style.width = `${availableWidth / 1.2}px`;
 
       marqueeInner.offsetWidth;
 
@@ -136,6 +136,8 @@ body.light-mode .desc-social a {
   font-family: "Pridi", sans-serif;
   font-weight: 600;
   font-size: 34px;
+  margin: 10px auto;
+  text-align: center;
   text-transform: uppercase;
   background-color: #252525;
   max-width: 968px;
@@ -147,8 +149,8 @@ body.light-mode .marquee {
 
 .marquee__inner {
   display: flex;
-  white-space: nowrap; /* Ensure the lines stay in a single row */
-  transition: transform 10s linear infinite; /* Adjust the transition property here */
+  white-space: nowrap;
+  transition: transform 10s linear infinite; 
 }
 .marquee__line {
   flex-shrink: 0;
@@ -188,7 +190,8 @@ body.light-mode .marquee {
     }
 
     .marquee {
-        margin-left: -10px;
+        margin: 10px auto;
+        text-align: center;
         font-size: 25px;
     }
 
