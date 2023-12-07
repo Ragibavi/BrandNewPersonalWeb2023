@@ -16,18 +16,16 @@
         <div class="title">
             <h1>Skills</h1>
         </div>
-        <div class="desc">
-            <div class="marquee">
-                <div class="marquee__inner">
-                    <p class="marquee__line">HTML, CSS, Javascript, Node.js, Express.js, Vue.js, React.js, C++, 
-                        Git, Node.JS, MySQL
-                    </p>
-                    <p class="marquee__line">HTML, CSS, Javascript, Node.js, Express.js, Vue.js, React.js, C++, 
-                        Git, Node.JS, MySQL
-                    </p>
-                </div>
-            </div>
-        </div>
+        <div class="marquee" ref="marquee">
+      <div class="marquee__inner" ref="marqueeInner">
+        <p class="marquee__line">
+          HTML, CSS, Javascript, Node.js, Express.js, Vue.js, React.js, C++, Git, Node.JS, MySQL
+        </p>
+        <p class="marquee__line">
+          HTML, CSS, Javascript, Node.js, Express.js, Vue.js, React.js, C++, Git, Node.JS, MySQL
+        </p>
+      </div>
+    </div>
         <div class="title">
             <h1>Contact</h1>
         </div>
@@ -44,14 +42,45 @@
                 <li><a href="https://open.spotify.com/user/316epynfsv4qew2rcgebfdy36jka" target="_blank">Spotify -
                         https://open.spotify.com/Armaggudean</a></li>
                 <li><a href="https://wa.me/6282299666066" target="_blank">Whatsapp -
-                    https://wa.me/6282299666066</a></li>
+                        https://wa.me/6282299666066</a></li>
             </ul>
         </div>
     </div>
 </template>
 
-<style scoped>
+<script>
+export default {
+  mounted() {
+    this.makeMarqueeResponsive();
+    window.addEventListener('resize', this.makeMarqueeResponsive);
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.makeMarqueeResponsive);
+  },
+  methods: {
+    makeMarqueeResponsive() {
+      const marqueeInner = this.$refs.marqueeInner;
+      const marqueeContainer = this.$refs.marquee;
 
+      const availableWidth = marqueeContainer.clientWidth;
+      const totalLineWidth = marqueeInner.scrollWidth;
+
+      const durationRatio = totalLineWidth / availableWidth;
+      const animationDuration = Math.max(durationRatio * 10, 5); 
+
+      marqueeInner.style.transition = 'none';
+      marqueeInner.style.transform = `translateX(-${totalLineWidth}px)`;
+
+      marqueeInner.offsetWidth;
+
+      marqueeInner.style.transition = `transform ${animationDuration}s linear`;
+      marqueeInner.style.transform = 'translateX(100%)';
+    },
+  },
+};
+</script>
+
+<style scoped>
 .container-profile {
     display: flex;
     flex-direction: column;
@@ -84,10 +113,11 @@
     margin-top: -10px;
 }
 
-.desc-social{
+.desc-social {
     font-size: 25px;
     padding-bottom: 150px;
 }
+
 .desc-social a {
     text-decoration: none;
     color: white;
@@ -105,6 +135,7 @@ body.light-mode .desc-social a {
   font-size: 34px;
   text-transform: uppercase;
   background-color: #252525;
+  max-width: 968px;
 }
 
 body.light-mode .marquee {
@@ -113,59 +144,49 @@ body.light-mode .marquee {
 
 .marquee__inner {
   display: flex;
-  width: 968px;
+  white-space: nowrap;
 }
 
 .marquee__line {
   flex-shrink: 0;
   margin: 0;
   padding: 10px 15px;
-  min-width: 2.5%;
-  white-space: nowrap;
-  animation-name: marqueeLine;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
 }
 
 @keyframes marqueeLine {
   from {
-    transform: translateX(0);
+    transform: translateX(100%);
   }
-  
+
   to {
     transform: translateX(-100%);
   }
 }
-
-@media screen and (max-width: 719px){
-
-    body{
-        height: 25000px;
-    }
-    .title{
+@media screen and (max-width: 719px) {
+    .title {
         font-size: 20px;
     }
 
-    .desc{
+    .desc {
         font-size: 15px;
     }
 
-    .img_profile img{
+    .img_profile img {
         width: 200px;
         height: 200px;
     }
 
-    .desc-social{
+    .desc-social {
         font-size: 15px;
     }
-    .desc-social a{
+
+    .desc-social a {
         font-size: 15px;
     }
-    .marquee{
+
+    .marquee {
         margin-left: -25px;
         font-size: 25px;
     }
 
-}
-</style>
+}</style>
