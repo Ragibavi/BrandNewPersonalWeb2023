@@ -119,10 +119,26 @@ export default {
         };
 
         const setupTouchEvents = () => {
-            canvas.value.addEventListener('touchstart', startDrawing);
-            canvas.value.addEventListener('touchmove', drawing);
-            canvas.value.addEventListener('touchend', stopDrawing);
-            canvas.value.addEventListener('touchcancel', stopDrawing);
+            canvas.value.addEventListener('touchstart', onTouchStart);
+            canvas.value.addEventListener('touchmove', onTouchMove);
+            canvas.value.addEventListener('touchend', onTouchEnd);
+            canvas.value.addEventListener('touchcancel', onTouchCancel);
+        };
+
+        const onTouchStart = (e) => {
+            startDrawing(e.touches[0]);
+        };
+
+        const onTouchMove = (e) => {
+            drawing(e.touches[0]);
+        };
+
+        const onTouchEnd = (e) => {
+            stopDrawing();
+        };
+
+        const onTouchCancel = (e) => {
+            stopDrawing();
         };
 
         onMounted(() => {
