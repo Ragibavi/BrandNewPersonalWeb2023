@@ -89,7 +89,8 @@ export default {
             console.log(color)
         };
 
-        const startDrawing = () => {
+        const startDrawing = (e) => {
+            e.preventDefault();
             const startToDraw = document.querySelector('.option-draw');
             if (startToDraw.classList.contains('start-drawing')) {
                 isDrawing = true;
@@ -103,13 +104,15 @@ export default {
         };
 
         const drawing = (e) => {
+            e.preventDefault();
             if (!isDrawing) return;
             ctx.lineTo(e.offsetX, e.offsetY);
             ctx.strokeStyle = color;
             ctx.stroke();
         };
 
-        const stopDrawing = () => {
+        const stopDrawing = (e) => {
+            e.preventDefault();
             isDrawing = false;
         };
 
