@@ -1,0 +1,11 @@
+body{
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+body.dark-mode{
+    background-color: #121212;
+}

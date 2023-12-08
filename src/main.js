@@ -1,9 +1,10 @@
 import { createApp } from 'vue'
+import './assets/main.css'
 import { createRouter, createWebHistory} from 'vue-router'
 import App from './App.vue'
+import Portfolio from '@/pages/Portfolio.vue'
 import Canvas from '@/pages/Canvas.vue'
 import Profile from '@/pages/Profile.vue'
-import Portfolio from '@/pages/Portfolio.vue'
 import Blog from '@/pages/Blog.vue'
 import Playlist from '@/pages/Playlist.vue'
 

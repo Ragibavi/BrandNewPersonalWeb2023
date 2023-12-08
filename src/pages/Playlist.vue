@@ -7,6 +7,19 @@
   </template>
   
   <style>
+
+  body.dark-mode .text-playlist{
+    color: #FFFFFF;
+  }
+
+  body.dark-mode .text-playlist-description{
+    color: #FFFFFF;
+  }
+
+  body.dark-mode .coming-soon {
+    color: #FFFFFF;
+  }
+
   .container-playlist {
     display: flex;
     flex-direction: column;
@@ -30,7 +43,6 @@
   
   .coming-soon {
     text-align: center;
-    line-height: 100vh;
     font-size: 3rem;
     font-family: pokemon-fill;
     margin: 0; 

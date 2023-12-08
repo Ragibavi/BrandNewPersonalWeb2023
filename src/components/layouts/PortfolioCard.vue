@@ -86,12 +86,7 @@
     </div>
 </template>
 
-<style>
-.card-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+<style scoped>
 
 body.dark-mode .card {
     border: 1px solid white;
@@ -101,10 +96,22 @@ body.light-mode .card {
     border: 1px solid black;
 }
 
+body.dark-mode .title{
+    color: #FFFFFF;
+}
+body.dark-mode .description{
+    color: #FFFFFF;
+}
+
 body.light-mode .description a {
     color: black;
 }
 
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 .card {
     display: flex;
     align-items: flex-start;

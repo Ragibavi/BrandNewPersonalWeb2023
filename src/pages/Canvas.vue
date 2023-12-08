@@ -2,29 +2,49 @@
     <div class="container-canvas">
         <div class="color-pick">
             <ul class="options">
-                <li class="option active" @click="change" id="rgb(0, 0, 255, .002)"><ion-icon
+                <li class="option active" @click="change" id="rgb(0, 0, 255, .005)"><ion-icon
                         class="icon-to-remove md hydrated" role="img" name="checkmark-circle-outline"
                         style="font-size: 30px;"></ion-icon></li>
-                <li class="option" @click="change" id="rgb(255, 0, 0, .002)"></li>
-                <li class="option" @click="change" id="rgb(0, 255, 0, .002)"></li>
+                <li class="option" @click="change" id="rgb(255, 0, 0, .005)"></li>
+                <li class="option" @click="change" id="rgb(0, 255, 0, .005)"></li>
                 <li class="option-draw" @click="draw" @touchstart="startDrawing"><ion-icon name="pencil-outline"
                         style="margin-left: -1px; margin-top: -1px; font-size: 20px;  padding: 6px;"></ion-icon></li>
                 <li class="option-draw" @click="refresh"><ion-icon name="trash-outline"
                         style="margin-left: -1px; margin-top: -1px; font-size: 20px;  padding: 6px;"></ion-icon></li>
             </ul>
         </div>
-        <canvas ref="canvas" class="no-scroll" @touchstart="startDrawing" @touchmove="drawing"
-            @touchend="stopDrawing"></canvas>
+        <canvas ref="canvas"></canvas>
+        <img :src="darkMode ? '/img/yui-dark-mode.png' : '/img/yui.png'" alt="" ref="canvasImg" class="canvas-img">
+        <div class="canvas-text">
+            <h3>
+                <span>Hello, I'm Ragibavi</span><br>
+                As a back-end developer, currently learning javascript and typescript. I'm interested and will explore
+                technology especially in the world of AI.
+            </h3>
+        </div>
     </div>
 </template>
-  
+
 <script>
 import { onMounted, ref } from 'vue';
 import FontFaceObserver from 'fontfaceobserver'
 
 export default {
+    data() {
+        return {
+            darkMode: false,
+        };
+    },
+
+    mounted() {
+        this.checkDarkMode();
+    },
 
     methods: {
+        checkDarkMode() {
+            this.darkMode = document.body.classList.contains('dark-mode');
+            console.log('Dark mode:', this.darkMode);
+        },
         draw(event) {
             const starting = document.querySelector('.option-draw')
             const ion = document.querySelector('.md.hydrated')
@@ -96,45 +116,6 @@ export default {
         const resizeCanvas = () => {
             canvas.value.width = window.innerWidth;
             canvas.value.height = window.innerHeight;
-
-            const image = new Image();
-            image.onload = function () {
-                const aspectRatio = image.width / image.height;
-                const maxWidth = canvas.value.width * 0.8;
-                const maxHeight = canvas.value.height * 0.8;
-
-                let width = maxWidth;
-                let height = maxWidth / aspectRatio;
-
-                if (height > maxHeight) {
-                    height = maxHeight;
-                    width = maxHeight * aspectRatio;
-                }
-
-                let x = (canvas.value.width - width) / 1.5;
-                let y = (canvas.value.height - height) / 3;
-
-                if (x < 382.2054286272212) {
-                    x = (canvas.value.width - width) / 1.5;
-                    y = 0;
-                    width = 375;
-                    height = 500;
-                }
-                if (x < 194.87209529388784) {
-                    x = (canvas.value.width - width) / 2;
-                    y = 0;
-                }
-                ctx.drawImage(image, x, y, width, height);
-            };
-
-            let bodyClass = document.body.className;
-            if (bodyClass.includes('dark-mode')) {
-                image.src = '/img/yui-dark-mode.png';
-            } else {
-                image.src = '/img/yui.png';
-            }
-
-            writeText();
         };
 
         const setupTouchEvents = () => {
@@ -148,7 +129,6 @@ export default {
 
             ctx = canvas.value.getContext('2d');
             setupTouchEvents();
-            window.addEventListener('resize', resizeCanvas);
             resizeCanvas();
             canvas.value.addEventListener('touchmove', drawing);
             canvas.value.addEventListener('touchend', () => isDrawing = false);
@@ -158,143 +138,7 @@ export default {
             canvas.value.addEventListener('mouseup', () => isDrawing = false);
             canvas.value.addEventListener('mouseout', () => isDrawing = false);
 
-            writeText();
         });
-
-        const writeText = () => {
-            const font = new FontFaceObserver('pokemon-fill');
-            font.load().then(() => {
-                console.log('Font loaded successfully');
-                canvas.value.width = window.innerWidth;
-                canvas.value.height = window.innerHeight;
-
-                let xMainText = 180;
-                let yMainText = 340;
-                let xSubText = 180;
-                let ySubText = 380;
-
-
-                if (canvas.value.width < 1420) {
-                    xMainText = 80;
-                    yMainText = 340;
-                    xSubText = 80;
-                    ySubText = 380;
-                }
-                if (canvas.value.width < 1265) {
-                    xMainText = 2;
-                    yMainText = 340;
-                    xSubText = 2;
-                    ySubText = 380;
-                }
-                if (canvas.value.width <= 1126) {
-                    xMainText = canvas.value.width / 4;
-                    yMainText = 530;
-                    xSubText = canvas.value.width / 4;
-                    ySubText = 570;
-                }
-                if (canvas.value.width <= 900) {
-                    xMainText = canvas.value.width / 4.5;
-                    yMainText = 530;
-                    xSubText = canvas.value.width / 4.5;
-                    ySubText = 570;
-                }
-                if (canvas.value.width <= 800) {
-                    xMainText = canvas.value.width / 6;
-                    yMainText = 530;
-                    xSubText = canvas.value.width / 6;
-                    ySubText = 570;
-                }
-                if (canvas.value.width <= 720) {
-                    xMainText = canvas.value.width / 13;
-                    yMainText = 530;
-                    xSubText = canvas.value.width / 13;
-                    ySubText = 570;
-                }
-
-                let bodyClass = document.body.className;
-                if (bodyClass.includes('dark-mode')) {
-                    ctx.fillStyle = 'rgb(203, 47, 47)';
-                } else if (bodyClass.includes('light-mode')) {
-                    ctx.fillStyle = 'rgb(0, 55, 255)';
-                }
-
-                if (canvas.value.width < 720) {
-                    ctx.font = 'bold 30px "pokemon-fill", sans-serif';
-                } else {
-                    ctx.font = 'bold 30px "pokemon-fill", sans-serif';
-                }
-
-                ctx.fillText(`Hello, I'm Ragibavi.`, xMainText, yMainText);
-
-                let text = `As a backend developer, currently learning javascript\nand typescript. I'm interested and will explore technology,\nespecially in the world of AI.`;
-                let lineHeight = 30;
-                let lines = text.split('\n');
-                let x = xSubText;
-                let y = ySubText;
-
-                if (bodyClass.includes('dark-mode')) {
-                    ctx.fillStyle = '#ffffff';
-                } else if (bodyClass.includes('light-mode')) {
-                    ctx.fillStyle = '#000000';
-                }
-
-                if (canvas.value.width > 720) {
-                    ctx.font = '20px sans-serif';
-                } else if (canvas.value.width <= 720) {
-                    ctx.font = '18px sans-serif';
-                }
-                if (canvas.value.width <= 520) {
-                    ctx.font = '15px sans-serif';
-                }
-                if (canvas.value.width <= 440) {
-                    ctx.font = '12px sans-serif';
-                }
-                for (let i = 0; i < lines.length; i++) {
-                    ctx.fillText(lines[i], x, y + i * lineHeight);
-                }
-                console.log(ctx.fillStyle);
-
-                let image = new Image();
-                image.onload = function () {
-                    const aspectRatio = image.width / image.height;
-                    const maxWidth = canvas.value.width * 0.8;
-                    const maxHeight = canvas.value.height * 0.8;
-
-                    let width = maxWidth;
-                    let height = maxWidth / aspectRatio;
-
-                    if (height > maxHeight) {
-                        height = maxHeight;
-                        width = maxHeight * aspectRatio;
-                    }
-
-                    let x = (canvas.value.width - width) / 1.5;
-                    let y = (canvas.value.height - height) / 3;
-
-                    if (x < 382.2054286272212) {
-                        x = (canvas.value.width - width) / 1.5;
-                        y = 0;
-                        width = 375;
-                        height = 500;
-                    }
-                    if (x < 194.87209529388784) {
-                        x = (canvas.value.width - width) / 2;
-                        y = 0;
-                    }
-                    ctx.drawImage(image, x, y, width, height);
-                }
-
-                if (bodyClass.includes('dark-mode')) {
-                    image.src = '/img/yui-dark-mode.png';
-                } else {
-                    image.src = '/img/yui.png';
-                }
-
-
-            }).catch((error) => {
-                console.error('Font loading failed:', error);
-            });
-        };
 
 
         return {
@@ -304,19 +148,52 @@ export default {
     },
 };
 </script>
-    
-<style>
-body {
-    overflow-x: hidden;
-}
 
-@font-face {
-    font-family: 'Sickness';
-    src: url('../assets/fonts/Sickness.ttf');
-}
-
+<style scoped>
 body.dark-mode .color-pick {
     background-color: #252525;
+}
+
+body.dark-mode .canvas-text h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .canvas-text h3 span {
+    color: rgb(0, 255, 255);
+}
+
+.canvas-text h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 21px;
+    font-weight: 100;
+    position: absolute;
+    top: 47%;
+    left: 26.3%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    z-index: -9999;
+    max-width: 500px;
+}
+
+.canvas-text h3 span {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: pokemon-fill;
+    color: rgb(0, 55, 255);
+}
+
+.canvas-img {
+    width: 550px;
+    height: auto;
+    z-index: -9999;
+    position: absolute;
+    top: 100px;
+    left: 900px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .color-pick {
@@ -329,6 +206,10 @@ body.dark-mode .color-pick {
     background-color: #f5f5f5;
     border-radius: 25px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    display: block;
 }
 
 .options {
@@ -392,10 +273,68 @@ body.dark-mode .color-pick {
     overflow: hidden;
 }
 
+@media screen and (max-width: 1510px) {
+
+    .canvas-img {
+        left: 700px;
+    }
+
+}
+
+@media screen and (max-width: 1310px) {
+
+    .canvas-img {
+        left: 500px;
+    }
+
+}
+
+@media screen and (max-width: 1110px) {
+
+    .canvas-img {
+        left: 400px;
+    }
+
+    .canvas-text h3 {
+        font-size: 15px;
+        left: 180px;
+        max-width: 350px;
+    }
+
+}
+
+@media screen and (max-width: 1010px) {
+
+    .canvas-img {
+        left: 300px;
+    }
+
+}
+
+
+
 @media screen and (max-width: 720px) {
     body {
         overflow-y: scroll;
         height: 900px;
+    }
+
+    .canvas-img {
+        width: 400px;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    .canvas-text h3 {
+        left: 50%;
+        top: 500px;
+        transform: translateX(-50%);
+        padding-bottom: 100px;
+    }
+
+    .canvas-text h3 span {
+        font-size: 20px;
     }
 
     .color-pick {

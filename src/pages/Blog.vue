@@ -7,7 +7,20 @@
 </template>
 
 
-<style>
+<style scoped>
+
+body.dark-mode .text-blog{
+    color: #FFFFFF;
+}
+
+body.dark-mode .text-blog-description{
+    color: #FFFFFF;
+}
+
+body.dark-mode .coming-soon {
+    color: #FFFFFF;
+}
+
 .container-blog {
   display: flex;
   flex-direction: column;
@@ -31,7 +44,6 @@
 
 .coming-soon {
     text-align: center;
-    line-height: 100vh;
     font-size: 3rem;
     font-family: pokemon-fill;
     margin: 0; 
