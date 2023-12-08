@@ -89,8 +89,7 @@ export default {
             console.log(color)
         };
 
-        const startDrawing = (e) => {
-            e.preventDefault();
+        const startDrawing = () => {
             const startToDraw = document.querySelector('.option-draw');
             if (startToDraw.classList.contains('start-drawing')) {
                 isDrawing = true;
@@ -104,15 +103,13 @@ export default {
         };
 
         const drawing = (e) => {
-            e.preventDefault();
             if (!isDrawing) return;
             ctx.lineTo(e.offsetX, e.offsetY);
             ctx.strokeStyle = color;
             ctx.stroke();
         };
 
-        const stopDrawing = (e) => {
-            e.preventDefault();
+        const stopDrawing = () => {
             isDrawing = false;
         };
 
@@ -222,6 +219,16 @@ h3 {
 }
 
 .option {
+    height: 30px;
+    width: 30px;
+    margin-top: 15px;
+    margin-left: 10px;
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.option, .option-draw {
     height: 30px;
     width: 30px;
     margin-top: 15px;
