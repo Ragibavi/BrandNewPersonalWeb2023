@@ -275,14 +275,6 @@ h3 {
     box-shadow: 0 0px 10px 0 rgba(255, 255, 255);
 }
 
-.no-scroll {
-    overflow: hidden;
-}
-
-.canvas-container {
-    overflow: hidden;
-}
-
 @media screen and (max-width: 1510px) {
 
     .canvas-img {
@@ -325,7 +317,6 @@ h3 {
 
 @media screen and (max-width: 720px) {
     body {
-        overflow-y: scroll;
         height: 900px;
     }
 
