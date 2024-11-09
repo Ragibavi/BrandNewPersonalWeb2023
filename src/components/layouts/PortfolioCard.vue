@@ -31,37 +31,6 @@
         </div>
 
         <div class="card">
-            <div class="img">
-                <img src="/img/canvas.png" alt="">
-            </div>
-            <div class="content">
-                <div class="title">
-                    <h1>Simple Drawing Canvas</h1>
-                </div>
-                <div class="description">
-                    <p>A simple drawing canvas using JavaScript, HTML and CSS is a web application that allows the user to
-                        draw on a rectangular area with different colors </p>
-                    <div class="element">
-                        <span class="javascript"> JavaScript</span>
-                        <span class="html">HTML</span>
-                        <span class="css">CSS</span>
-                    </div>
-                    <br>
-                    <div class="links">
-                        <a href="https://canvassimpleragibavi.netlify.app/" target="_blank" class="icon-visit"><ion-icon
-                                name="arrow-forward-outline"></ion-icon></a>
-                        <a href="https://canvassimpleragibavi.netlify.app/" target="_blank" class="visit-link">Click Here To
-                            Visit Project</a>
-                        <a href="https://github.com/Ragibavi/SimpleDrawCanvasJavascript.git" target="_blank"
-                            class="icon-source"><ion-icon name="logo-github" class="icon-visit"></ion-icon></a>
-                        <a href="https://github.com/Ragibavi/SimpleDrawCanvasJavascript.git" target="_blank"
-                            class="source-link">Source Code</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
             <div class="img_2">
                 <img src="/img/piketkuy.png" alt="">
             </div>
@@ -83,7 +52,82 @@
                 </div>
             </div>
         </div>
+
+        <div class="card">
+            <div class="img_2">
+                <img src="/img/kejaksaan.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">
+                    <h1>Monitoring Tools for Election</h1>
+                </div>
+                <div class="description">
+                    <p>Website monitoring Kejaksaan RI for Election 2024</p>
+                    <div class="element">
+                        <span class="laravel">Laravel</span>
+                        <span class="javascript"> JavaScript</span>
+                        <span class="python">Python</span>
+                        <span class="html">Bootstrap</span>
+                        <span class="css">Jquery</span>
+                    </div>
+                    <br>
+                    <div class="links">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img_2">
+                <img src="/img/simRs.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">
+                    <h1>SimRS for Dr.Iqbali Taufan</h1>
+                </div>
+                <div class="description">
+                    <p>Website Administration for Rumah Sakit Dr.Iqbali Taufan</p>
+                    <div class="element">
+                        <span class="laravel">Laravel</span>
+                        <span class="javascript"> JavaScript</span>
+                        <!-- <span class="python">Python</span> -->
+                        <span class="html">Java</span>
+                        <span class="css">Jquery</span>
+                    </div>
+                    <br>
+                    <div class="links">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img_2">
+                <img src="/img/Rekam-Akademik.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">
+                    <h1>Rekam Akademik</h1>
+                </div>
+                <div class="description">
+                    <p>Website for data monitoring student, attandance, and absence at Vocational School Wikrama Bogor</p>
+                    <div class="element">
+                        <span class="laravel">Laravel</span>
+                        <span class="javascript"> Express</span>
+                        <!-- <span class="python">Python</span> -->
+                        <span class="html">Bootstrap</span>
+                        <span class="css">Jquery</span>
+                    </div>
+                    <br>
+                    <div class="links">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+    
 </template>
 
 <style scoped>
@@ -179,6 +223,14 @@ body.light-mode .description a {
 }
 .vue {
     background-color: rgb(20, 100, 0);
+    color: black;
+    padding: 1px 5px 1px 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.python {
+    background-color: rgb(71, 64, 175);
     color: black;
     padding: 1px 5px 1px 5px;
     border-radius: 5px;

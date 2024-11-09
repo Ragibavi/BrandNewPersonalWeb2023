@@ -7,7 +7,7 @@
                         style="font-size: 30px;"></ion-icon></li>
                 <li class="option" @click="change" id="rgb(255, 0, 0, .005)"></li>
                 <li class="option" @click="change" id="rgb(0, 255, 0, .005)"></li>
-                <li class="option-draw" @click="draw" @touchstart="startDrawing"><ion-icon name="pencil-outline"
+                <li class="option-draw start-drawing" @click="draw" @touchstart="startDrawing"><ion-icon name="pencil-outline"
                         style="margin-left: -1px; margin-top: -1px; font-size: 20px;  padding: 6px;"></ion-icon></li>
                 <li class="option-draw" @click="refresh"><ion-icon name="trash-outline"
                         style="margin-left: -1px; margin-top: -1px; font-size: 20px;  padding: 6px;"></ion-icon></li>
@@ -18,8 +18,8 @@
         <div class="canvas-text">
             <h3>
                 <span>Hello, I'm Ragibavi</span><br>
-                As a back-end developer, currently learning javascript and typescript. I'm interested and will explore
-                technology especially in the world of AI.
+                I specialize in Full-Stack Development, with a focus on Back-end.
+                 I use Vue for front-end interfaces, Express for Node.js APIs, Laravel for back-end, and SQL for databases. 
             </h3>
         </div>
     </div>

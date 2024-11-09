@@ -1,7 +1,7 @@
 <template>
   <div class="container-profile">
     <div class="img_profile">
-      <img src="/img/profileRagibavi.jpg" alt="">
+      <img src="/img/pokemon.png" alt="" class="no-stretch">
     </div>
     <div class="title">
       <h1>About</h1>
@@ -19,10 +19,10 @@
     <div class="marquee" ref="marquee">
       <div class="marquee__inner" ref="marqueeInner">
         <p class="marquee__line">
-          HTML, CSS, Javascript, Node.js, Express.js, Vue.js, React.js, C++, Git, Node.JS, MySQL
+          HTML, CSS, Javascript, Node.js, Express.js, Vue.js, React.js, Laravel, C++, Git, Node.JS, MySQL
         </p>
         <p class="marquee__line">
-          HTML, CSS, Javascript, Node.js, Express.js, Vue.js, React.js, C++, Git, Node.JS, MySQL
+          HTML, CSS, Javascript, Node.js, Express.js, Vue.js, React.js, Laravel, C++, Git, Node.JS, MySQL
         </p>
       </div>
     </div>
@@ -106,10 +106,20 @@ body.dark-mode .marquee {
   text-align: center;
 }
 
-.img_profile img {
+/* .img_profile img {
   border-radius: 50%;
   width: 300px;
   height: 300px;
+} */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.no-stretch {
+  max-width: 100%;
+  height: auto;
 }
 
 .title {
@@ -182,10 +192,10 @@ body.dark-mode .marquee {
     font-size: 15px;
   }
 
-  .img_profile img {
+  /* .img_profile img {
     width: 200px;
     height: 200px;
-  }
+  } */
 
   .desc-social {
     font-size: 15px;
